@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>Slicebox - 3D Image Slider</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="author" content="Pedro Botelho for Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<img src="images/11.jpg" alt="image1"/>
+				
+					</li>
+
+					<li>
+
+						<img src="images/12.jpg" alt="image2"/>
+				
+					</li>
+
+					<li>
+						<img src="images/13.jpg" alt="image1"/>
+					
+					</li>
+				</ul>
+				<div id="shadow" class="shadow"></div>
+			</div><!-- /wrapper -->
+		</div>
+
+		<script src="http://www.jq22.com/jquery/1.8.3/jquery.min.js"></script>
+
+		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
+
+		<script type="text/javascript">
+
+			var $slicebox; $(function() { 
+			$slicebox = $('#sb-slider').slicebox({  
+				interval:6000,  
+				orientation : "r", //表示幻灯片的切换方向，可取 (v)垂直方向, (h)水平方向 or (r)随机方向 
+				perspective : 1800, //透视点距离，可以通过改变其值查看效果 
+				cuboidsCount : 3, //幻灯片横向或纵向被切割的块数，切割的每一块将会以3D的形式切换 
+				cuboidsRandom : true, //是否随机 cuboidsCount 参数的值 
+				maxCuboidsCount : 5, //设置一个值用来规定最大的 cuboidsCount 值 
+				colorHiddenSides : "#333", //隐藏的幻灯片的颜色 
+				sequentialFactor : 150, //幻灯片切换时间（毫秒数） 
+				speed : 600, //每一块3D立方体的速度 
+				autoplay : true, //是否自动开始切换 
+				onBeforeChange : function(position) { return false; },  
+				onAfterChange : function(position) { return false; }  
+			});  
+		});
+
+		</script>
+
+	</body>
+
+</html>	
